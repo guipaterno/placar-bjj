@@ -4,6 +4,7 @@
     font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
+
 .cronometro-div{
     background-color: rgb(12, 12, 12);
     width: 850px;
@@ -13,13 +14,6 @@
     justify-content: center;
 
 }
-
-/* #btnIniciar{
-    border: transparent;
-    background: transparent;
-} */
-
-
 
 span{
     color: rgb(19, 160, 19);
@@ -61,23 +55,15 @@ span{
 }
 .atleta1{
     background-color: white;
-    border-right: 1px black solid; /* coloquei somente para visualizar a div*/
+    border-right: 1px black solid; 
     box-sizing: border-box;
-    color: black;/* 
-    width: 850px;
-    height: 190px;
-    display: flex;
-    justify-content: end;
-     */
+    color: black;
 }
 
 .atleta2{
     background-color: rgb(23, 119, 228);
     color: white;
-   /*  width: 850px;
-    height: 190px;
-    display: flex;
-    justify-content: end; */
+  
 }
 .green, .yellow, .red{
     font-size: 135px;
@@ -105,4 +91,21 @@ span{
     width: 140px;
     height: 180px;
     margin-right: 4px;
+}
+
+#btnIniciar, #btnPausar, #btnReiniciar{
+    width: 55px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px black solid;
+    margin: 2px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgb(185, 180, 180);
+    
+}
+
+button:hover{
+    
+    opacity: 0.8;
 }

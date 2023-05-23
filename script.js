@@ -1,5 +1,6 @@
 // FUNCAO DE INSERIR NOME e EQUIPE
-var nameEl1 = document.querySelector("#name1")
+
+/* var nameEl1 = document.querySelector("#name1")
 var namePrompt1 = prompt("Nome atleta 1")
 nameEl1.innerHTML = namePrompt1
 
@@ -13,17 +14,17 @@ nameEl2.innerHTML = namePrompt2
 
 var equipeEl2 = document.querySelector("#equipe2")
 var equipePrompt2 = prompt("Nome equipe 2")
-equipeEl2.innerHTML = equipePrompt2 
+equipeEl2.innerHTML = equipePrompt2  */
 
 // FUNÇÕES DO INICIAR PAUSAR E ZERAR DO CRONOMETRO//
 
 
-var btnIniciar = document.getElementById("btnIniciar");
-var btnPausar = document.getElementById("btnPausar");
-var btnReiniciar = document.getElementById("btnReiniciar");
-var cronometroElemento = document.getElementById("cronometro");
+var btnIniciar = document.querySelector("#btnIniciar");
+var btnPausar = document.querySelector("#btnPausar");
+var btnReiniciar = document.querySelector("#btnReiniciar");
+var cronometroElemento = document.querySelector("#cronometro");
 var cronometro;
-var tempoTotal = 300;
+var tempoTotal = 299;
 var tempoRestante = tempoTotal;
 
 
@@ -67,11 +68,9 @@ btnReiniciar.addEventListener("click", function() {
  
   tempoRestante = tempoTotal;
 
-
-
 });
 
-
+// Pontuação 
 
 let scoreFig1 = 0 
 let scoreFig2 = 0
@@ -82,7 +81,7 @@ function attScore1(){
   document.querySelector("#score1").textContent = scoreFig1
 } 
 
-document.getElementById('score1').addEventListener('click', function() {
+document.querySelector("#score1").addEventListener("click", function() {
     attScore1();
   });
 
@@ -91,7 +90,7 @@ function attScore1N(){
     document.querySelector("#score1").textContent = scoreFig1
 
 }
-document.getElementById('score1').addEventListener("contextmenu", function(event) {
+document.querySelector("#score1").addEventListener("contextmenu", function(event) {
     event.preventDefault()
     attScore1N();
   });
@@ -101,7 +100,7 @@ document.getElementById('score1').addEventListener("contextmenu", function(event
     document.querySelector("#score2").textContent = scoreFig2
   } 
   
-  document.getElementById('score2').addEventListener('click', function() {
+  document.querySelector("#score2").addEventListener("click", function() {
       attScore2();
     });
   
@@ -110,7 +109,7 @@ document.getElementById('score1').addEventListener("contextmenu", function(event
       document.querySelector("#score2").textContent = scoreFig2
   
   }
-  document.getElementById('score2').addEventListener("contextmenu", function(event) {
+  document.querySelector("#score2").addEventListener("contextmenu", function(event) {
       event.preventDefault()
       attScore2N();
     });
@@ -125,7 +124,7 @@ function attAdv1(){
   advFig1++;
   document.querySelector("#adv1").textContent = advFig1
 } 
-document.getElementById('adv1').addEventListener('click', function() {
+document.querySelector("#adv1").addEventListener("click", function() {
   attAdv1();
 });
 
@@ -135,7 +134,7 @@ function attAdv1N(){
     document.querySelector("#adv1").textContent = advFig1
 
 }
-document.getElementById('adv1').addEventListener("contextmenu", function(event) {
+document.querySelector("#adv1").addEventListener("contextmenu", function(event) {
     event.preventDefault()
     attAdv1N();
   });
@@ -147,7 +146,7 @@ function attAdv2(){
   document.querySelector("#adv2").textContent = advFig2
 } 
 
-  document.getElementById('adv2').addEventListener('click', function() {
+  document.querySelector("#adv2").addEventListener("click", function() {
     attAdv2();
 })
 
@@ -156,7 +155,7 @@ function attAdv2N(){
     document.querySelector("#adv2").textContent = advFig2
 
 }
-document.getElementById('adv2').addEventListener("contextmenu", function(event) {
+document.querySelector("#adv2").addEventListener("contextmenu", function(event) {
     event.preventDefault()
     attAdv2N();
   });
@@ -171,7 +170,7 @@ function attPen1(){
     penFig1++;
     document.querySelector("#pen1").textContent = penFig1
 }
-document.querySelector("#pen1").addEventListener('click', function(){
+document.querySelector("#pen1").addEventListener("click", function(){
     attPen1()
 })
 
@@ -180,7 +179,7 @@ function attPen1N(){
     document.querySelector("#pen1").textContent = penFig1
 
 }
-document.getElementById('pen1').addEventListener("contextmenu", function(event) {
+document.querySelector("#pen1").addEventListener("contextmenu", function(event) {
     event.preventDefault()
     attPen1N();
   });
@@ -190,7 +189,7 @@ function attPen2(){
     document.querySelector("#pen2").textContent = penFig2
 }
 
-document.querySelector("#pen2").addEventListener('click', function(){
+document.querySelector("#pen2").addEventListener("click", function(){
     attPen2()
 })
 function attPen2N(){
@@ -198,12 +197,9 @@ function attPen2N(){
     document.querySelector("#pen2").textContent = penFig2
 
 }
-document.getElementById('pen2').addEventListener("contextmenu", function(event) {
+document.querySelector("#pen2").addEventListener("contextmenu", function(event) {
     event.preventDefault()
     attPen2N();
   });
 
 
-
-
-// mudar getElementById para queryselect
