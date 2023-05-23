@@ -1,6 +1,6 @@
 // FUNCAO DE INSERIR NOME e EQUIPE
 
-/* var nameEl1 = document.querySelector("#name1")
+var nameEl1 = document.querySelector("#name1")
 var namePrompt1 = prompt("Nome atleta 1")
 nameEl1.innerHTML = namePrompt1
 
@@ -14,7 +14,7 @@ nameEl2.innerHTML = namePrompt2
 
 var equipeEl2 = document.querySelector("#equipe2")
 var equipePrompt2 = prompt("Nome equipe 2")
-equipeEl2.innerHTML = equipePrompt2  */
+equipeEl2.innerHTML = equipePrompt2 
 
 // FUNÇÕES DO INICIAR PAUSAR E ZERAR DO CRONOMETRO//
 
