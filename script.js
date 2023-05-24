@@ -16,60 +16,6 @@ var equipeEl2 = document.querySelector("#equipe2")
 var equipePrompt2 = prompt("Nome equipe 2")
 equipeEl2.innerHTML = equipePrompt2 
 
-// FUNÇÕES DO INICIAR PAUSAR E ZERAR DO CRONOMETRO//
-
-
-var btnIniciar = document.querySelector("#btnIniciar");
-var btnPausar = document.querySelector("#btnPausar");
-var btnReiniciar = document.querySelector("#btnReiniciar");
-var cronometroElemento = document.querySelector("#cronometro");
-var cronometro;
-var tempoTotal = 299;
-var tempoRestante = tempoTotal;
-
-
-function atualizarCronometro() {
-  var minutos = Math.floor(tempoRestante / 60);
-  var segundos = tempoRestante % 60;
-
-  var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
-  var segundosFormatados = segundos < 10 ? "0" + segundos : segundos;
-
-  cronometroElemento.innerHTML = minutosFormatados + ":" + segundosFormatados;
-
-  if (tempoRestante <= 0) {
-    clearInterval(cronometro);
-    cronometroElemento.innerHTML = "Tempo esgotado!";
-  }
-
-  tempoRestante--;
-}
-
-btnIniciar.addEventListener("click", function() {
-  btnIniciar.disabled = true;
-  btnPausar.disabled = false;
-  btnReiniciar.disabled = false;
-
-  cronometro = setInterval(atualizarCronometro, 1000);
-});
-
-btnPausar.addEventListener("click", function() {
-  clearInterval(cronometro);
-  btnIniciar.disabled = false;
-  btnPausar.disabled = true;
-});
-
-btnReiniciar.addEventListener("click", function() {
-  clearInterval(cronometro);
-  cronometroElemento.innerHTML = "05:00";
-  btnIniciar.disabled = false;
-  btnPausar.disabled = true;
-  btnReiniciar.disabled = true;
- 
-  tempoRestante = tempoTotal;
-
-});
-
 // Pontuação 
 
 let scoreFig1 = 0 
@@ -203,3 +149,83 @@ document.querySelector("#pen2").addEventListener("contextmenu", function(event) 
   });
 
 
+// FUNÇÕES DO INICIAR PAUSAR E ZERAR DO CRONOMETRO//
+
+var cronometroDiv= document.querySelector(".cronometro-div")
+var btnIniciar = document.querySelector("#btnIniciar");
+var btnPausar = document.querySelector("#btnPausar");
+var btnZerar = document.querySelector("#btnZerar");
+var cronometroElemento = document.querySelector("#cronometro");
+var cronometro;
+var tempoTotal = 299;   
+var tempoRestante = tempoTotal;
+
+
+function atualizarCronometro() {
+  var minutos = Math.floor(tempoRestante / 60);
+  var segundos = tempoRestante % 60;
+
+  var minutosFormatados = minutos < 10 ? "0" + minutos : minutos;
+  var segundosFormatados = segundos < 10 ? "0" + segundos : segundos;
+
+  cronometroElemento.innerHTML = minutosFormatados + ":" + segundosFormatados;
+
+  
+ if (tempoRestante <= 0) {
+    clearInterval(cronometro);
+    cronometroElemento.innerHTML = "Tempo esgotado!";
+    cronometroDiv.style.backgroundColor = 'red';
+    cronometroElemento.style.color = 'black';
+   
+  }
+
+  tempoRestante--; 
+}
+
+btnIniciar.addEventListener("click", function() {
+  btnIniciar.disabled = true;
+  btnPausar.disabled = false;
+  btnZerar.disabled = false;
+
+  cronometro = setInterval(atualizarCronometro, 1000);
+});
+
+btnPausar.addEventListener("click", function() {
+  clearInterval(cronometro);
+  btnIniciar.disabled = false;
+  btnPausar.disabled = true;
+});
+
+btnZerar.addEventListener("click", function() {
+  clearInterval(cronometro);
+  cronometroElemento.innerHTML = "05:00";
+  btnIniciar.disabled = false;
+  btnPausar.disabled = true;
+  btnZerar.disabled = true;
+ 
+  tempoRestante = tempoTotal;
+
+});
+
+
+var btnReiniciar = document.querySelector("#btnReiniciar");
+  function refreshPage() {
+  location.reload();
+  }
+
+btnReiniciar.addEventListener("click", refreshPage);
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+criar uma interação de quem venceu a luta.. tipo o "você é tosquinho venceu a luta" 
+e qnd acabar a luta antes da hora.. o cronometro pausa e fica de outra cor...*/

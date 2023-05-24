@@ -93,12 +93,13 @@ span{
     margin-right: 4px;
 }
 
-#btnIniciar, #btnPausar, #btnReiniciar{
-    width: 55px;
-    height: 30px;
+#btnIniciar, #btnPausar, #btnZerar, #btnReiniciar{
+    width: 80px;
+    height: 40px;
     border-radius: 5px;
     border: 1px black solid;
     margin: 2px;
+    font-size: 15px;
     font-weight: bold;
     text-align: center;
     background-color: rgb(185, 180, 180);
