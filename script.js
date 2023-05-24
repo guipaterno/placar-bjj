@@ -174,8 +174,8 @@ function atualizarCronometro() {
  if (tempoRestante <= 0) {
     clearInterval(cronometro);
     cronometroElemento.innerHTML = "Tempo esgotado!";
-    cronometroDiv.style.backgroundColor = 'red';
-    cronometroElemento.style.color = 'black';
+    cronometroDiv.style.backgroundColor = "red";
+    cronometroElemento.style.color = "black";
    
   }
 
@@ -183,6 +183,8 @@ function atualizarCronometro() {
 }
 
 btnIniciar.addEventListener("click", function() {
+  cronometroDiv.style.backgroundColor = "rgb(12, 12, 12)";
+  cronometroElemento.style.color = "rgb(19, 160, 19)";
   btnIniciar.disabled = true;
   btnPausar.disabled = false;
   btnZerar.disabled = false;
@@ -192,12 +194,16 @@ btnIniciar.addEventListener("click", function() {
 
 btnPausar.addEventListener("click", function() {
   clearInterval(cronometro);
+  cronometroDiv.style.backgroundColor = "red";
+  cronometroElemento.style.color = "black";
   btnIniciar.disabled = false;
   btnPausar.disabled = true;
 });
 
 btnZerar.addEventListener("click", function() {
   clearInterval(cronometro);
+  cronometroDiv.style.backgroundColor = "rgb(12, 12, 12)";
+  cronometroElemento.style.color = "rgb(19, 160, 19)";
   cronometroElemento.innerHTML = "05:00";
   btnIniciar.disabled = false;
   btnPausar.disabled = true;
